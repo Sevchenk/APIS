@@ -4,9 +4,9 @@ from pydantic import BaseModel
 from typing import Dict, List
 
 app = FastAPI(
-    title="Actividad Formativa 4",
-    description="API para gestionar la orquestación de servicios",
-    version="1.0.0",
+    title=          "Actividad Formativa 4",
+    description=    "API para gestionar la orquestación de servicios",
+    version=        "1.0.0",
 )
 
 # Define el esquema de autenticación OAuth2 basado en tokens Bearer.
@@ -17,18 +17,18 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/autenticar-usuario")
 users_db = {
 
     "admin": {
-        "password": "admin123",
-        "role": "Administrador"
+        "password":     "admin123",
+        "role":         "Administrador"
     },
 
     "orq": {
-        "password": "orq123", 
-        "role": "Orquestador"
+        "password":     "orq123", 
+        "role":         "Orquestador"
     },
 
     "user": {
-        "password": "user123", 
-        "role": "Usuario"
+        "password":     "user123", 
+        "role":         "Usuario"
     }
 }
 
@@ -109,9 +109,9 @@ def autenticar_usuario(form_data: OAuth2PasswordRequestForm = Depends()):
 def autorizar_acceso(solicitud: SolicitudAutorizacion, user=Depends(require_roles("Administrador", "Orquestador"))):
     # Simula una respuesta positiva de autorización para los recursos solicitados
     return {
-        "autorizado": True,
-        "rol_usuario": solicitud.rol_usuario,
-        "recursos_autorizados": solicitud.recursos
+        "autorizado":               True,
+        "rol_usuario":              solicitud.rol_usuario,
+        "recursos_autorizados":     solicitud.recursos
     }
 
 
