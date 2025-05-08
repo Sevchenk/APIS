@@ -5,7 +5,7 @@ from typing import Dict, List
 
 app = FastAPI(
     title=          "Actividad Formativa 4",
-    description=    "API para gestionar la orquestación de servicios",
+    description=    "API para gestionar la orquestación de servicios web Services REST en una Empresa de Logística con Especificaciones de Datos",
     version=        "1.0.0",
 )
 
